@@ -257,6 +257,10 @@ function ProductList({ onHomeClick }) {
         setShowCart(false);
     };
 
+    const handleCheckoutShopping = (e) => {
+        e.preventDefault();
+    };    
+
     const handleAddToCart = (product) => {
         dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
 
@@ -321,7 +325,7 @@ function ProductList({ onHomeClick }) {
                     ))}
                 </div>
             ) : (
-                <CartItem onContinueShopping={handleContinueShopping} />
+                <CartItem onContinueShopping={handleContinueShopping} onCheckoutShopping={handleCheckoutShopping} />
             )}
         </div>
     );
